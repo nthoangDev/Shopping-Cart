@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping website</title>
+
+    <!-- Font Google  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+    <!-- Font Awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER  -->
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="assets/images/logo.png" alt=""></a>
+        </div>
+        <nav class="header__navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+             </ul>
+        </nav>
+        <div class="header__info">
+            <i class="fa fa-search"></i>
+            <a class="cart" href="pages/cart/cart.html">
+                <!-- <p class="cart-item">0</p> -->
+                <i class="fa fa-shopping-bag"></i>
+            </a>
+
+            <a href="pages/authenticate/login_signup.html" class="header__account">
+                <i class="fa fa-user-alt"></i>
+                <p id="accountname">Đăng nhập</p>
+            </a>
+        </div>
+    </header>
+
+    <!-- PRODUCTS  -->
+    <section class="products">
+        <div class="product__item">
+            <img src="assets/images/xiaomi-pad-6-blue-thumb-600x600.jpg">
+            <div class="product-info">
+                <h3>Iphone 15</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, illo!</p>
+                <a href="pages/detail/detail.html" class="btn">View</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER  -->
+    <footer>
+        <div class="copyright">
+            <p>Copyright &copy;2024 All rights reserved. | This template is made with  by <a href="#">nguyenthanhhoang</a></p>
+        </div>
+    </footer>
+
+    <!-- Main JS  -->
+    <script src="main.js" defer></script>
+    <script src="pages/detail/detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Log in / Sign up</title>
+  <link rel="stylesheet" href="login_signup.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap">
+</head>
+<body>
+
+  <div class="backtohome">
+    <a href="../../index.html">Back to home</a>
+  </div>
+  <div class="container">
+    <div class="container-forms">
+      <div class="container-info">
+        <div class="info-item">
+          <p>Have an account?</p>
+          <button class="btn">Log in</button>
+        </div>
+        <div class="info-item">
+          <p>Don't have an account?</p>
+          <button class="btn">Sign up</button>
+        </div>
+      </div>
+      <div class="container-form">
+        <form class="form-item log-in">
+          <h1>Login</h1>
+          <input id="loginUsername" name="Username" placeholder="Username" type="text" />
+          <input id="loginPassword" name="Password" placeholder="Password" type="Password" />
+          <div id="loginMessage"></div>
+          <button  onclick="login(event)" type="submit" class="btn">Log in</button>
+        </form>
+        <form class="form-item sign-up">
+          <h1>Sign up</h1>
+          <input id="regEmail" name="email" placeholder="Email" type="text" />
+          <input id="regFullName" name="fullName" placeholder="Full Name" type="text" />
+          <input id="regUsername" name="Username" placeholder="Username" type="text" />
+          <input id="regPassword" name="Password" placeholder="Password" type="Password" />
+          <div id="regMessage"></div>
+          <button onclick="register(event)" type="submit" class="btn">Sign up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="login_signup.js"></script>
+</body>
+</html>

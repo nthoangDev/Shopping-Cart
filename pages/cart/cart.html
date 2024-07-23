@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping cart page</title>
+    <!-- Font Google  -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Font Awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="cart.css">
+
+</head>
+
+<body>
+    <!-- HEADER  -->
+    <header>
+        <div class="logo">
+            <a href="../../index.html"><img src="../../assets/images/logo.png" alt="logo"></a>
+        </div>
+        <nav class="header__navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+             </ul>
+        </nav>
+        <div class="header__info">
+            <i class="fa fa-search"></i>
+            <a class="cart" href="../cart/cart.html">
+                <i class="fa fa-shopping-bag"></i>
+            </a>
+
+            <a href="../authenticate/login_signup.html" class="header__account">
+                <i class="fa fa-user-alt"></i>
+                <p id="accountname">Đăng nhập</p>
+            </a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="cart-container">
+            <div class="cart-part">
+                <div class="cart-img">
+                    <img src="../../assets/images/iphone-14-pro-max-tim-thumb-600x600.jpg" alt="">
+                </div>
+                <div class="cart-desc">
+                    <h3>Iphone 15</h3>
+                </div>
+                <div class="cart-quantity">
+                    <input type="number" min="0" id="quantity">
+                </div>
+                <div class="cart-price">
+                    <h4>$1000</h4>
+                </div>
+                <div class="cart-total">
+                    <h4>$2000</h4>
+                </div>
+                <div class="cart-remove">
+                    <button>Remove</button>
+                </div>
+            </div>
+            <div class="cart-part">
+                <div class="cart-img">
+                    <img src="../../assets/images/iphone-14-pro-max-tim-thumb-600x600.jpg" alt="">
+                </div>
+                <div class="cart-desc">
+                    <h3>Iphone 15</h3>
+                </div>
+                <div class="cart-quantity">
+                    <input type="number" min="0" id="quantity">
+                </div>
+                <div class="cart-price">
+                    <h4>$1000</h4>
+                </div>
+                <div class="cart-total">
+                    <h4>$2000</h4>
+                </div>
+                <div class="cart-remove">
+                    <button>Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-summary">
+            <div class="product-total">
+                <h2>Total Product: <span id="total">$1000.90</span> </h2>
+            </div>
+        
+            <div class="product-checkout">
+                <a href="../checkout/checkout.html" class="checkout">Checkout</a>
+            </div>
+            <button class="removeAll">Clear Cart</button>
+        </div>
+    </div>
+   
+
+
+   
+
+
+
+    <script src="cart.js"></script>
+    <script src="../detail/detail.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "title": "Ipad 9 5G 64GB",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "price": 15000000,
+        "img": "assets/images/iPad-9-5G-600x600.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Iphone 14 Promax màu tím",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus non, dicta libero incidunt neque voluptatem!",
+        "price": 25000000,
+        "img": "assets/images/iphone-14-pro-max-tim-thumb-600x600.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Iphone 14 purple",
+        "description": "Lorem ipsum dolor sit amet consectetur. Repellendus non, dicta libero incidunt neque voluptatem!",
+        "price": 10000000,
+        "img": "assets/images/iPhone-14-thumb-tim-1-600x600.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Máy tính bảng Mobell Ta 4G",
+        "description": "Lorem ipsum dolor sit amet consectetur. ",
+        "price": 35000000,
+        "img": "assets/images/mobell-tab-8,1-thumb-xanh-600x600.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Samsung Galaxy A14 5G",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, eum.",
+        "price": 45000000,
+        "img": "assets/images/samsung-galaxy-a14-5g-thumb-den-600x600.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Xiaomi Redmi Pad Pro WiFi 6GB/128GB",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, illo!",
+        "price": 16000000,
+        "img": "assets/images/xiaomi-pad-6-blue-thumb-600x600.jpg"
+    }
+]

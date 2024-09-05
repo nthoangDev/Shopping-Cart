@@ -1,3 +1,5 @@
+
+
 document.querySelectorAll(".info-item .btn").forEach(function (button) {
   button.addEventListener("click", function () {
     document.querySelector(".container").classList.toggle("log-in");
@@ -84,6 +86,5 @@ function login(event) {
 
 function logout() {
   window.location.href = 'login_signup.html'; // Chuyển hướng đến trang login_signup.html
-  let name = document.getElementById('name');
-  name.innerHTML = localStorage.getItem()
 }
+

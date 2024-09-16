@@ -1,16 +1,20 @@
 let container = document.querySelector('.container');
-
 let cartContainer = document.querySelector('.cart-container');
-
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
 let cartSummary = document.querySelector('.cart-summary');
+const header__account = document.querySelector(".header__account");
 
 window.addEventListener("DOMContentLoaded", () => {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     if (loggedInUser) {
         document.getElementById("accountname").innerText = loggedInUser.username;
         document.querySelector(".header__account i").className = "fa fa-sign-out-alt"; // Đổi icon thành đăng xuất
+    } else {
+        // Nếu không có người dùng đăng nhập, thiết lập nút hiển thị "Đăng nhập"
+        document.querySelector(".header__account").innerHTML = `
+        <i class="fa fa-user-alt"></i>
+        <p id="accountname">Đăng nhập</p>
+      `;
     }
 });
 
@@ -74,7 +78,7 @@ let update = (id) => {
 
 }
 
-let totalProducts = async() => {
+let totalProducts = async () => {
     let respone = await fetch('../../data.json');
     let data = await respone.json();
 
@@ -83,7 +87,7 @@ let totalProducts = async() => {
             let search = data.find(itemData => itemData.id === item.id) || [];
             return item.count * search.price;
         }).reduce((x, y) => x + y, 0);
-        cartSummary.innerHTML=`
+        cartSummary.innerHTML = `
          <div class="product-total">
             <h2>Total Product: <span id="total">$${total}</span> </h2>
         </div>
@@ -94,10 +98,10 @@ let totalProducts = async() => {
         <button onclick="clearCart()" class="removeAll">Clear Cart</button>
     `;
     } else return;
-    
+
 };
 
-let removeItem = (id) =>{
+let removeItem = (id) => {
     let removeId = id;
     cart = cart.filter(item => item.id !== removeId);
     renderCartItem();
@@ -105,11 +109,27 @@ let removeItem = (id) =>{
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-let clearCart = () =>{
-    cart=[];
+let clearCart = () => {
+    cart = [];
     renderCartItem();
     localStorage.setItem('cart', JSON.stringify(cart));
 }
+
+function logout() {
+    // Xóa thông tin người dùng đã lưu trong localStorage
+    localStorage.removeItem('loggedInUser');
+
+    // Thay đổi giao diện người dùng thành trạng thái chưa đăng nhập
+    document.querySelector(".header__account").innerHTML = `
+      <i class="fa fa-user-alt"></i>
+      <p id="accountname">Đăng nhập</p>
+    `;
+
+    // Chuyển hướng đến trang login_signup.html
+    window.location.href = 'login_signup.html';
+}
+
+header__account.addEventListener('click', logout)
 
 renderCartItem();
 

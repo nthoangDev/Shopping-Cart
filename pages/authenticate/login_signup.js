@@ -82,9 +82,3 @@ function login(event) {
     loginMessage.style.color = 'red';
   }
 }
-
-
-function logout() {
-  window.location.href = 'login_signup.html'; // Chuyển hướng đến trang login_signup.html
-}
-

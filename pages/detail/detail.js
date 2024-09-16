@@ -1,12 +1,19 @@
 const detailContainer = document.querySelector(".detail-container");
 const btnAddCart = document.getElementById('addCart');
 const cartIcon = document.querySelector('.cart');
+const header__account = document.querySelector(".header__account");
 
 window.addEventListener("DOMContentLoaded", () => {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     if (loggedInUser) {
-      document.getElementById("accountname").innerText = loggedInUser.username;
-      document.querySelector(".header__account i").className = "fa fa-sign-out-alt"; // Đổi icon thành đăng xuất
+        document.getElementById("accountname").innerText = loggedInUser.username;
+        document.querySelector(".header__account i").className = "fa fa-sign-out-alt"; // Đổi icon thành đăng xuất
+    } else {
+        // Nếu không có người dùng đăng nhập, thiết lập nút hiển thị "Đăng nhập"
+        document.querySelector(".header__account").innerHTML = `
+        <i class="fa fa-user-alt"></i>
+        <p id="accountname">Đăng nhập</p>
+      `;
     }
 });
 
@@ -18,7 +25,7 @@ const getDetailProduct = async () => {
     const respone = await fetch('../../data.json');
 
     const data = await respone.json();
-    
+
     const findProductId = data.find(item => item.id.toString() === productId.toString());
 
     detailContainer.innerHTML = `
@@ -72,7 +79,7 @@ const getDetailProduct = async () => {
 const setCartItem = () => {
     const cart = JSON.parse(localStorage.getItem('cart'));
 
-    if (cart && cart.length > 0){
+    if (cart && cart.length > 0) {
         cartIcon.innerHTML = `
             <p class="cart-item">${cart.length}</p>
             <i class="fa fa-shopping-bag"></i>
@@ -80,7 +87,21 @@ const setCartItem = () => {
     }
 }
 
+function logout() {
+    // Xóa thông tin người dùng đã lưu trong localStorage
+    localStorage.removeItem('loggedInUser');
 
+    // Thay đổi giao diện người dùng thành trạng thái chưa đăng nhập
+    document.querySelector(".header__account").innerHTML = `
+      <i class="fa fa-user-alt"></i>
+      <p id="accountname">Đăng nhập</p>
+    `;
+
+    // Chuyển hướng đến trang login_signup.html
+    window.location.href = 'login_signup.html';
+}
+
+header__account.addEventListener('click', logout)
 
 setCartItem();
 getDetailProduct();
